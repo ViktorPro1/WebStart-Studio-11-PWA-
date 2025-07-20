@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /checkout/
+Allow: /
+
+Sitemap: https://scintillating-sunshine-94e986.netlify.app/sitemap.xml
+

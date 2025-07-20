@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebStart Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon-32x32.png" type="image/x-icon" />
+
+    <!-- SEO Метатеги -->
+    <meta name="description"
+        content="WebStart Studio пропонує створення стильних портфоліо, резюме та лендінгів з адаптивною версткою, сучасним дизайном і ефективною таргетованою рекламою для малого бізнесу та фрілансерів." />
+    <meta name="keywords"
+        content="портфоліо, резюме, лендінг, HTML, верстка, таргетована реклама, дизайн, веб-розробка" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph для соцмереж -->
+    <meta property="og:title" content="WebStart Studio" />
+    <meta property="og:description"
+        content="Створення портфоліо, резюме та односторінкових сайтів. Адаптивна верстка, дизайн, реклама." />
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/banner.png?v=2" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="WebStart Studio" />
+    <meta name="twitter:description"
+        content="Створення портфоліо, резюме та односторінкових сайтів. Адаптивна верстка, дизайн, реклама." />
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/banner.png?v=2" />
+
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PNL84GTKES"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-PNL84GTKES");
+    </script>
+
+    <!-- Структуровані дані (Schema Markup) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://scintillating-sunshine-94e986.netlify.app/",
+      "name": "WebStart Studio",
+      "description": "Створення портфоліо, резюме та односторінкових сайтів з адаптивною версткою, дизайном і рекламою."
+    }
+    </script>
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/" />
+
+    <!-- PWA manifest -->
+    <script>
+        if ('serviceWorker' in navigator && !localStorage.getItem('pwaLoaded')) {
+            localStorage.setItem('pwaLoaded', 'true');
+            window.location.href = "/pwa-loader.html";
+        }
+    </script>
+
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Іконка для PWA -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192x192.png" />
+
+    <!-- Тема для статус-бара (Android) -->
+    <meta name="theme-color" content="#000000" />
+
+    <!-- iOS підтримка (Safari) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="WebStart Studio" />
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
+
+
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGMWZKLK" height="0" width="0"
+            style="display: none; visibility: hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Привітальне вікно -->
+    <div id="welcome-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h2>Ласкаво просимо на нашу платформу!</h2>
+        </div>
+    </div>
+
+    <header>
+        <h1>Web<span class="logo-header">Start</span> Studio</h1>
+
+        <!-- <div class="mini-counter">
+            👁️ <span id="view-counter">0</span> переглядів
+        </div> -->
+
+        <!-- Бургер-іконка -->
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Навігація -->
+        <nav id="navMenu">
+            <a href="#services">Створюємо</a>
+            <a href="#portfolio">Портфоліо</a>
+            <a href="#pricing">Вартість</a>
+            <a href="#promo">Акції</a>
+            <a href="#briefs" class="nav-btn">Отримати</a>
+            <a href="#testimonials">Відгуки</a>
+            <a href="#hosting-help">Розміщення</a>
+            <a href="#faq">FAQ</a>
+            <a href="#extras">Додаткове</a>
+            <a href="#blog">Дайджест</a>
+            <a href="#contact-gift-wrapper">Контакти</a>
+            <a href="#guide-bonus">Бонус+</a>
+            <a href="#advantages" class="btn-header">Чому ми?</a>
+            <a href="#social">Соцмережі</a>
+        </nav>
+        <!-- Темна тема -->
+        <label class="theme-toggle">
+            <input type="checkbox" id="darkModeToggle" />
+            🌙 Темна тема
+        </label>
+    </header>
+    <!-- Рухомий рядок  -->
+    <section class="marquee-container">
+        <h2 class="hidden-heading">Рухомий рядок</h2>
+        <div class="marquee">
+            <span>
+                <span class="highlight-propose">🏃‍♂️ Пропонуємо:</span>
+                <span class="highlight-landing">Лендінг</span> |
+                <span class="highlight-portfolio">Портфоліо</span>|
+                <span class="highlight-resume">Резюме</span>|
+                <span class="highlight-additional">🔥 Додаткові можливості для вашого успіху...</span>
+                <span class="highlight-banners">Банери (шаблони) для соцмереж</span> |
+                <span class="highlight-target">Запуск таргетованої реклами у Facebook та Instagram</span> |
+                <span class="highlight-tax">Повернення податків з Польщі (PIT-11)</span>
+            </span>
+        </div>
+    </section>
+    <!-- Про нас  -->
+    <section>
+        <h2 class="centered">Про нас</h2>
+        <p class="centered">
+            Ми — творча команда, яка створює візуально привабливі сайти, портфоліо
+            та резюме. <br>Працюємо швидко, якісно та з любов’ю до деталей. Окрім цього,
+            ми запускаємо таргетовану рекламу у Facebook та Instagram через власні
+            сторінки, що дозволяє швидко просувати ваші послуги чи проєкти. Також
+            створюємо стильні шаблони та банери для вашої роботи, реклами та
+            соцмереж. Ми дбаємо про кожен піксель, щоб ваша онлайн-присутність
+            виглядала професійно й привабливо.
+        </p>
+
+        <p class="centered">
+            Крім того, допомагаємо повернути податок із Польщі — оформляємо PIT- 37
+            з PIT-11 і супроводжуємо весь процес.
+        </p>
+
+        <!-- Кнопка для відкриття відео
+      <button
+        id="toggle-video"
+        style="
+          margin-top: 1rem;
+          padding: 10px 20px;
+          background-color: #e50914;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+        "
+      >
+        🎬 Переглянути відео про нас
+      </button> -->
+
+        <!-- Спойлер з відео -->
+        <div id="video-container" style="margin-top: 20px; display: none">
+            <div style="
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          ">
+                <iframe src="https://www.youtube.com/embed/N2pMAWxTh7c" title="Відео про нас" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            ">
+                </iframe>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="skills.html" class="btn-open-skills" style="
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        background: #18b190;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s ease;
+    ">Наші технічні навички</a>
+        </div>
+
+    </section>
+    <!-- Наші послуги -->
+    <section id="services" style="max-width: 800px; margin: auto; padding: 2rem">
+        <h2 style="text-align: center; margin-bottom: 2rem">Що ми створюємо</h2>
+        <div style="
+             display: flex;
+             flex-wrap: wrap;
+             gap: 1.5rem;
+             justify-content: center;
+            ">
+            <div style="
+                    flex: 1 1 250px;
+                    border: 1px solid #ddd;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    text-align: center;
+                ">
+                <div style="font-size: 2rem">🎨</div>
+                <h3>Дизайн портфоліо</h3>
+                <a href="portfolio-info.html" class="btn" style="
+                    display: inline-block;
+                    margin-top: 1rem;
+                    padding: 0.6rem 1.2rem;
+                    background: #2dc0a8;
+                    color: #fff;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    ">Що таке портфоліо?</a>
+            </div>
+
+            <div style="
+                    flex: 1 1 250px;
+                    border: 1px solid #ddd;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    text-align: center;
+               ">
+                <div style="font-size: 2rem">📝</div>
+                <h3>Електронне резюме</h3>
+                <a href="resume-info.html" class="btn" style="
+                    display: inline-block;
+                    margin-top: 1rem;
+                    padding: 0.6rem 1.2rem;
+                    background: #2dc0a8;
+                    color: #fff;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    ">Що таке резюме?</a>
+            </div>
+
+            <div style="
+                    flex: 1 1 250px;
+                    border: 1px solid #ddd;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    text-align: center;
+                ">
+                <div style="font-size: 2rem">🔧</div>
+                <h3>Адаптивна верстка</h3>
+                <a href="adaptive-info.html" class="btn" style="
+                    display: inline-block;
+                    margin-top: 1rem;
+                    padding: 0.6rem 1.2rem;
+                    background: #2dc0a8;
+                    color: #fff;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    ">Що таке адаптивна верстка?</a>
+            </div>
+        </div>
+
+        <div
+            style="flex: 1 1 100%; border: 1px solid #ddd; border-radius: 10px; padding: 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); text-align: center; margin-bottom: 2rem;margin-top: 1.5rem;">
+            <h2 style="margin-bottom: 1.5rem; font-size: 1.2rem; color: #333; text-align: center;">
+                <span style="font-size: 1.8rem; margin-right: 10px;">🌐</span>
+                Лендінги та односторінкові сайти
+            </h2>
+
+
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #555;">Ми спеціалізуємось на створенні
+                різноманітних
+                рішень для вашого онлайн-простору:</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-bottom: 1.5rem;">
+
+                <!-- Веб-додатки -->
+                <div
+                    style="flex: 1 1 250px; border: 1px solid #ddd; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <div style="font-size: 2.5rem;">💻</div>
+                    <h3>Веб-додатки</h3>
+                    <p>Розробка інтерактивних веб-додатків: калькулятори, чат-боти, інтерактивні інтерфейси.</p>
+                    <a href="webapp-info.html" class="btn"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; background: #2dc0a8; color: #fff; border-radius: 8px; text-decoration: none;">Дізнатися
+                        більше</a>
+                </div>
+
+                <!-- SEO-оптимізація -->
+                <div
+                    style="flex: 1 1 250px; border: 1px solid #ddd; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <div style="font-size: 2.5rem;">🔍</div>
+                    <h3>SEO-оптимізація</h3>
+                    <p>Покращення видимості вашого сайту в пошукових системах для залучення більшої аудиторії.</p>
+                    <a href="seo-info.html" class="btn"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; background: #2dc0a8; color: #fff; border-radius: 8px; text-decoration: none;">Дізнатися
+                        більше</a>
+                </div>
+
+                <!-- Інтеграція з соцмережами -->
+                <div
+                    style="flex: 1 1 250px; border: 1px solid #ddd; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <div style="font-size: 2.5rem;">📱</div>
+                    <h3>Інтеграція з соцмережами</h3>
+                    <p>Автоматичне публікування контенту та додавання віджетів соцмереж на сайт для більшої взаємодії.
+                    </p>
+                    <a href="socialmedia-info.html" class="btn"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; background: #2dc0a8; color: #fff; border-radius: 8px; text-decoration: none;">Дізнатися
+                        більше</a>
+                </div>
+
+                <!-- Динамічні анімації -->
+                <div
+                    style="flex: 1 1 250px; border: 1px solid #ddd; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <div style="font-size: 2.5rem;">🎥</div>
+                    <h3>Динамічні анімації</h3>
+                    <p>Створюємо анімації для елементів на сайті, щоб він виглядав яскраво та інтерактивно.</p>
+                    <a href="animations-info.html" class="btn"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; background: #2dc0a8; color: #fff; border-radius: 8px; text-decoration: none;">Дізнатися
+                        більше</a>
+                </div>
+
+                <!-- Інтернет-магазини -->
+                <div
+                    style="flex: 1 1 250px; border: 1px solid #ddd; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <div style="font-size: 2.5rem;">🛒</div>
+                    <h3>Інтернет-магазини</h3>
+                    <p>Розробка та налаштування онлайн-магазинів для продажу товарів або послуг.</p>
+                    <a href="ecommerce-info.html" class="btn"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; background: #2dc0a8; color: #fff; border-radius: 8px; text-decoration: none;">Дізнатися
+                        більше</a>
+                </div>
+
+                <!-- Блоги та новини -->
+                <div
+                    style="flex: 1 1 250px; border: 1px solid #ddd; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <div style="font-size: 2.5rem;">📰</div>
+                    <h3>Блоги та новини</h3>
+                    <p>Створення блогів та новин для публікацій, статей та оновлень на вашому сайті.</p>
+                    <a href="blog-info.html" class="btn"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; background: #2dc0a8; color: #fff; border-radius: 8px; text-decoration: none;">Дізнатися
+                        більше</a>
+                </div>
+
+                <!-- Персоналізовані лендінги -->
+                <div
+                    style="flex: 1 1 250px; border: 1px solid #ddd; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <div style="font-size: 2.5rem;">💍</div>
+                    <h3>Персоналізовані лендінги</h3>
+                    <p>Створення унікальних лендінгів для ваших подій, виставок, весіль та інших особливих моментів.</p>
+                    <a href="personalized-landing-info.html" class="btn"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; background: #2dc0a8; color: #fff; border-radius: 8px; text-decoration: none;">Дізнатися
+                        більше</a>
+                </div>
+            </div>
+
+            <p style="font-size: 1.1rem; color: #555;">
+                Кожен наш проект створюється з урахуванням ваших потреб та індивідуальних вимог. Ми працюємо для того,
+                щоб ваше
+                онлайн-представництво було ефективним, інтуїтивно зрозумілим і привабливим для користувачів.
+            </p>
+        </div>
+    </section>
+    <!-- Вікторина  -->
+    <section class="cta-section">
+        <h2>Пройдіть нашу вікторину і знайдіть найкращий варіант для себе!</h2>
+        <p>Завдяки нашій вікторині ви отримаєте індивідуальні рекомендації, які допоможуть обрати найкраще рішення.</p>
+        <a href="service-recommendation.html" class="cta-button">Перейти до вікторини</a>
+    </section>
+    <!-- Наші роботи -->
+    <section id="portfolio">
+        <h2>Готові макети</h2>
+        <div class="portfolio-container">
+            <div class="project-card">
+                <div class="project-icon">🎨</div>
+                <h3>Дизайн портфоліо</h3>
+                <p>
+                    Ми створюємо стильні та функціональні макети, поєднуючи Developer
+                    style,Minimal style,Modern gradient та безліч інших трендових
+                    рішень. Кожен проєкт – це унікальне поєднання елегантного дизайну і
+                    адаптивності, що підходить для різних вакансій і платформ.
+                </p>
+
+                <details>
+                    <summary>Переглянути</summary>
+                    <a href="https://benevolent-naiad-cb3a58.netlify.app/" target="_blank" class="btn">Developer
+                        style</a><br />
+                    <a href="https://dashing-tanuki-7f8fb0.netlify.app/" target="_blank" class="btn">Minimal
+                        style</a><br />
+                    <a href="https://fantastic-parfait-65ff15.netlify.app/" target="_blank" class="btn">Modern
+                        gradient</a><br />
+                    <a href="https://starlit-tapioca-5f8da4.netlify.app/" target="_blank" class="btn">Premium</a>
+                </details>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">📝</div>
+                <h3>Електронне резюме</h3>
+                <p>
+                    Ми можемо створити різноманітні варіанти резюме, такі як класичне,
+                    креативне, мінімалістичне та багато інших, в залежності від вашого
+                    стилю та потреб. Легка сторінка з інтерактивним блоком навичок – це
+                    ідеальний спосіб ефективно презентувати свої вміння та досвід. Кожне
+                    резюме адаптується під різні пристрої, щоб виглядати бездоганно на
+                    будь-якому екрані.
+                </p>
+                <details>
+                    <summary>Переглянути</summary>
+                    <a href="https://cute-eclair-b92b0f.netlify.app/" target="_blank" class="btn">Classic</a>
+                    <a href="https://resonant-fudge-055f66.netlify.app/" target="_blank" class="btn">Creative</a>
+                    <a href="https://frolicking-sunflower-90993f.netlify.app/" target="_blank" class="btn">Minimal</a>
+                    <a href="https://fluffy-sawine-100fa8.netlify.app/" target="_blank" class="btn">Premium</a>
+                </details>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">📄</div>
+                <h3>Односторінкові сайти</h3>
+                <p>
+                    Ось деякі з наших проєктів, які ви можете оглянути: лендінг для
+                    Instagram "taplink", що ідеально підходить для брендів і
+                    фрілансерів; стильний лендінг для рекрутера, щоб залучати
+                    кандидатів; мікрокредитування для просування, що дає можливість
+                    швидко залучати клієнтів; а також сайт для пасажирських перевезень
+                    по ЄС, з легким доступом до маршруту і ціни. І це лише частина того,
+                    що ми можемо створити!
+                </p>
+
+                <details>
+                    <summary>Переглянути</summary>
+                    <a href="https://sage-naiad-50b7a5.netlify.app/" target="_blank" class="btn">Landing recruiter</a>
+                    <a href="https://clinquant-melomakarona-a088a5.netlify.app/" target="_blank" class="btn">Instagram
+                        "taplink"</a>
+                    <a href="https://celebrated-faun-808026.netlify.app/" target="_blank" class="btn">Microlending for
+                        promotion</a>
+                    <a href="https://shimmering-tulumba-a21566.netlify.app/" target="_blank" class="btn">Eu Passenger
+                        Transport Site</a>
+                </details>
+            </div>
+        </div>
+    </section>
+    <!-- Вартість -->
+    <section id="pricing">
+        <div style="text-align: center;">
+            <h2 style="color: #007BFF;">Вартість</h2>
+            <p>Щоб ознайомитися з актуальними пропозиціями та їх деталями — натисніть
+                <button id="togglePricing" aria-expanded="false">тут</button>.
+            </p>
+        </div>
+
+
+        <table id="pricingTable" style="display: none; margin-top: 20px; width: 100%; border-collapse: collapse;">
+            <tr>
+                <th style="border: 1px solid #ccc; padding: 8px;">Послуга</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Ціна</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Портфоліо</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">від 500 грн</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Резюме</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">від 300 грн</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Лендінг</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">від 800 грн</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Адаптивна верстка (мобільна версія)</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">від 300 грн</td>
+            </tr>
+        </table>
+
+        <div id="linkWrapper" style="display: none; margin-top: 15px;">
+            <a href="offer.html" target="_blank" rel="noopener noreferrer" class="btn-link">Дізнатись більше</a>
+        </div>
+    </section>
+    <!-- Акція -->
+    <section class="promo" id="promo">
+        <div class="promo-container">
+            <h2>🎁 1+1 = Більше!</h2>
+            <p>
+                Обери портфоліо або резюме — отримай банер або шаблон для соцмереж у
+                подарунок! Ідеально для старту, кар'єри або бізнесу — щоб виглядати
+                професійно в мережі.
+            </p>
+            <div id="countdown" class="countdown"></div>
+            <a href="https://t.me/Viktor_freelancer_recruiting_pit" target="_blank" class="promo-btn">Отримати зараз</a>
+        </div>
+    </section>
+    <!-- Замовити -->
+    <section id="briefs" class="briefs">
+        <div class="briefs-container">
+            <h2 class="briefs-title">Для отримання індивідуального проєкту.</h2>
+            <p class="briefs-description">
+                Оберіть напрям і завантажте короткий бриф. <br />Після того, як ви
+                його заповните, надішліть нам у
+                <a href="viber://chat?number=+380661391932">Viber</a>
+            </p>
+
+            <div class="briefs-buttons">
+                <a href="documents/brief_resume.docx" download class="brief-btn brief-resume">Бриф на резюме</a>
+                <a href="documents/brief_portfolio.docx" download class="brief-btn brief-portfolio">Бриф на
+                    портфоліо</a>
+                <a href="documents/brief_site.docx" download class="brief-btn brief-site">Бриф на сайт</a>
+            </div>
+        </div>
+    </section>
+    <!-- Відгуки -->
+    <section id="testimonials">
+        <h2>Відгуки про нас</h2>
+        <div class="testimonials-container">
+            <div class="testimonial" id="testimonial1">
+                <img src="foto/elena.jpg" alt="Олена" class="testimonial-photo" />
+                <div class="testimonial-content">
+                    <p>“Все зроблено за 3 дні — я у захваті!”</p>
+                    <cite>— Олена, маркетолог</cite>
+                </div>
+            </div>
+
+            <div class="testimonial" id="testimonial2">
+                <img src="foto/andrew.jpg" alt="Андрій" class="testimonial-photo" />
+                <div class="testimonial-content">
+                    <p>
+                        “Замість довгих обіцянок — швидкий результат і якість.
+                        Рекомендую!”
+                    </p>
+                    <cite>— Андрій, власник онлайн-магазину</cite>
+                </div>
+            </div>
+
+            <div class="testimonial" id="testimonial3">
+                <img src="foto/mary.jpg" alt="Марія" class="testimonial-photo" />
+                <div class="testimonial-content">
+                    <p>
+                        “Замовила електронне резюме — виглядає сучасно, отримала нову
+                        роботу за тиждень.”
+                    </p>
+                    <cite>— Марія, безробітна</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Розміщення та допомога -->
+    <section id="hosting-help" class="info-section">
+        <h2>Розміщення та підтримка</h2>
+        <p>
+            Після створення вашого портфоліо, резюме або сайту, ви отримаєте архів з
+            усіма файлами у форматі
+            <strong>ZIP</strong>.
+        </p>
+        <p>
+            Якщо у вас ще немає хостингу — ми допоможемо з
+            <strong>реєстрацією на безкоштовній платформі</strong>, такі як
+            <a href="https://www.netlify.com" target="_blank">Netlify</a>
+        </p>
+        <p>
+            Після цього ви зможете
+            <strong>самостійно керувати своїми файлами</strong> або звернутися до
+            нас за подальшою підтримкою.
+        </p>
+        <a href="instruction.html" class="brief-btn">Детальна інструкція щодо Netlify</a>
+    </section>
+    <!-- Поширені запитання (FAQ) -->
+    <section id="faq" class="faq-section">
+        <h2>Поширені запитання</h2>
+
+        <details>
+            <summary>А якщо я в цьому нічого не тямлю?</summary>
+            <p>
+                Нічого страшного — усе зробимо за вас. Лише відповісте на кілька
+                простих питань у файлі (брифі). Детальніше дивіться у розділі
+                <a href="#briefs" class="nav-btn">Отримати</a>.
+            </p>
+        </details>
+
+        <details>
+            <summary>Скільки часу йде на створення?</summary>
+            <p>Залежно від завдання, терміни виконання можуть варіюватися.
+                Зазвичай це займає від кількох годин до 3 днів. Якщо проєкт складніший —
+                ми повідомимо вас про це заздалегідь.</p>
+        </details>
+
+        <details>
+            <summary>А можна щось підправити, якщо мені не сподобається?</summary>
+            <p>
+                Звісно. Якщо щось не підходить — разом підкоригуємо до бажаного
+                вигляду.
+            </p>
+        </details>
+
+        <details>
+            <summary>Як отримати своє резюме, портфоліо або лендінг?</summary>
+            <p>
+                Ви отримаєте архів з усіма файлами та інструкцією. Також можемо
+                розмістити сторінку в інтернеті для вас. Ви можете ознайомитись із
+                деталями у розділі <a href="#hosting-help">Розміщення</a>.
+            </p>
+        </details>
+
+        <details>
+            <summary>А якщо я щось забуду або не зрозумію?</summary>
+            <p>
+                Пишіть нам у Viber чи Telegram — допоможемо розібратись або нагадаємо,
+                що і як.
+            </p>
+        </details>
+    </section>
+    <!-- Додаткові можливості -->
+    <section id="extras" class="extras-section">
+        <h2>Додаткові можливості</h2>
+        <div class="extras-container">
+            <div class="extra-card">
+                <div class="extra-icon">🎯</div>
+                <h3>Таргетована реклама</h3>
+                <p>
+                    Запускаємо ефективну рекламу у Facebook та Instagram, щоб допомогти
+                    вам залучати більше клієнтів. <br />Ніша: <br />-Робота за кордоном.
+                    <br />-Пасажирські перевезення до ЄС
+                </p>
+                <a href="target.html" class="calc-button-1">Роз'яснення</a>
+                <a href="calc.html" class="calc-button">Розрахувати рекламу</a>
+            </div>
+            <div class="extra-card">
+                <div class="extra-icon">🖼️</div>
+                <h3>Банери та Шаблони</h3>
+                <p>
+                    Створюємо банери, шаблони та креативи для реклами, соцмереж і сайтів
+                    за допомогою Canva. Розробляємо шаблони з урахуванням вашого стилю,
+                    можемо додати QR-коди, згенерувати фото штучним інтелектом та інші
+                    елементи для максимального візуального ефекту.
+                </p>
+                <a href="price.html" class="price-btn">Переглянути вартість</a>
+            </div>
+            <div class="extra-card">
+                <div class="extra-icon">🧾</div>
+                <h3>Повернення податків з Польщі</h3>
+                <p>
+                    Допомагаємо повертати податки після офіційної роботи в Польщі.
+                    Оформлюємо декларацію онлайн, працюємо з PIT-11, коригуємо помилки.
+                    Усе просто — надаєш документи, ми робимо решту.
+                </p>
+                <a href="declaration.html" class="price-btn-1">Дізнатись більше</a>
+            </div>
+        </div>
+    </section>
+    <!-- Блог / Новини -->
+    <section id="blog" class="blog-section">
+        <h2 class="blog-title">Дайджест</h2>
+        <div class="blog-posts">
+            <article class="blog-card">
+                <h3>🚀 Нові функції платформи</h3>
+                <p>Оновлення включають покращення адаптивності, оптимізацію продуктивності та нові секції для зручності
+                    користувачів.</p>
+                <a href="blog-features.html" class="read-more">Читати далі →</a>
+            </article>
+            <article class="blog-card">
+                <h3>⚡ Як обрати правильну послугу?</h3>
+                <p>Гайд по вибору сервісу: маркетинг, лендінги, резюме – що найкраще для вас.</p>
+                <a href="blog-services-guide.html" class="read-more">Читати далі →</a>
+            </article>
+            <article class="blog-card">
+                <h3>🔥 Корисні поради для сайту</h3>
+                <p>SEO, CTA, соціальні докази – ключі до підвищення конверсії та довіри.</p>
+                <a href="blog-seo-tips.html" class="read-more">Читати далі →</a>
+            </article>
+        </div>
+    </section>
+    <!-- Контакти  -->
+    <section id="contact-gift-wrapper">
+        <div class="contact-block">
+            <h2>Контакти</h2>
+            <p>
+                📧 Email:
+                <a href="mailto:webstartstudio978@gmail.com">webstartstudio978@gmail.com</a>
+            </p>
+            <p>📱 Telefon: <a href="tel:+380661391932">+38(066) 139 19 32</a></p>
+            <p>
+                <a href="viber://chat?number=+380661391932" class="viber-button">Написати у Viber</a>
+            </p>
+        </div>
+
+        <div class="gift-block" id="guide-bonus">
+            <h3>🎁 Путівник новачка (бонус+)</h3>
+            <p>
+                🧑‍🎓 Завантажте наш безкоштовний путівник, щоб дізнатися, як створити
+                своє перше портфоліо, навіть якщо у вас ще немає досвіду!
+            </p>
+            <a href="documents/WebStart_Portfolio_Guide.docx" download class="btn-primary">Завантажити путівник</a>
+        </div>
+    </section>
+    <!-- Чому WebStart Studio -->
+    <section id="advantages" class="advantages">
+        <h2>Чому Web<span class="highlight">Start</span> Studio?</h2>
+        <div class="advantages-grid">
+            <div class="adv-item">
+                <div class="emoji">⚡</div>
+                <h3>Швидко</h3>
+                <p>Створення резюме та лендінгів за лічені хвилини.</p>
+            </div>
+            <div class="adv-item">
+                <div class="emoji">🧩</div>
+                <h3>Зручно</h3>
+                <p>Інтерфейс, що не потребує технічних знань.</p>
+            </div>
+            <div class="adv-item">
+                <div class="emoji">🎯</div>
+                <h3>Результативно</h3>
+                <p>Резюме, що справляють враження і приносять роботу.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Соцмережі -->
+    <section id="social" class="socials">
+        <h3>Ми в соцмережах</h3>
+        <ul class="social-list">
+            <li>
+                <a href="https://t.me/+IleSiwteF2NlOWVi" target="_blank" class="telegram">Telegram</a>
+            </li>
+            <li>
+                <a href="https://invite.viber.com/?g2=AQB%2FfR4KvKip91SwMbV0bYMLZbEbchx7bj7gNYwkp7xEy3eZ8%2BIvyHL9YpqymDtE"
+                    target="_blank" class="viber">Viber</a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61575866647011&locale=uk_UA" target="_blank"
+                    class="facebook">Facebook</a>
+            </li>
+            <li>
+                <a href="https://chat.whatsapp.com/H5Mz1CTwCwDJAXvyhPKUka" target="_blank" class="whatsapp">WhatsApp</a>
+            </li>
+        </ul>
+    </section>
+    <!-- Поділитись платформою -->
+    <section class="share-platform">
+        <h3>Розкажіть про нашу платформу у своїх соцмережах</h3>
+        <div class="share-buttons">
+            <button class="share-btn facebook" onclick="share('facebook')">
+                Facebook
+            </button>
+            <button class="share-btn telegram" onclick="share('telegram')">
+                Telegram
+            </button>
+            <button class="share-btn messenger" onclick="share('messenger')">
+                Messenger
+            </button>
+            <button class="share-btn viber" onclick="share('viber')">Viber</button>
+            <button class="share-btn linkedin" onclick="share('linkedin')">
+                LinkedIn
+            </button>
+        </div>
+    </section>
+    <!-- Вікно допомоги -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>
+                Привіт! 👋<br />
+                🤖 Я – <a href="djon.html">Djon</a>,<br />
+                твій особистий гід у<br />
+                WebStart Studio.<br />
+                Якщо потрібна допомога,<br />
+                пиши нам у <br />
+                <a href="viber://chat?number=+380661391932" target="_blank">Viber 📱</a>
+                <a href="https://t.me/Viktor_freelancer_recruiting_pit" target="_blank">Telegram 💬</a><br />
+                або залиш запит у
+                <a href="contact.html" target="_blank">Зворотньому зв'язку ✉️</a>
+            </p>
+            <button id="close-popup" class="close-btn">❌</button>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <p>
+            <a href="#" class="footer-link">&copy; 2025 Web<span class="logo-footer">Start</span> Studio</a>
+        </p>
+        <p>
+            Маєте ідеї чи поради для нас? Поділіться ними через
+            <a href="contact.html" class="footer-link highlighted">зворотний зв'язок <span
+                    class="highlighted-icon">✉️</span></a>. Дякуємо!
+        </p>
+        <!-- Інші елементи футера -->
+        <nav class="legal-nav">
+            <ul>
+                <li><a href="privacy.html" target="_blank" rel="noopener">Політика конфіденційності</a></li>
+                <li><a href="terms.html" target="_blank" rel="noopener">Умови використання</a></li>
+            </ul>
+        </nav>
+
+    </footer>
+
+    <button id="scrollTopBtn" title="Вгору">⬆️</button>
+
+
+    <!-- Cookie Notification Section -->
+    <div id="cookie-banner" style="
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    color: #333;
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    font-family: sans-serif;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+">
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+            <strong>Ми використовуємо cookies</strong>
+            <button id="cookie-close" style="
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: #666;
+    " aria-label="Закрити банер">&times;</button>
+        </div>
+        <div style="font-size: 14px;">
+            Щоб забезпечити найкращий досвід на нашій платформі. Продовжуючи, ви погоджуєтесь з <a href="privacy.html"
+                target="_blank">Політикою конфіденційності</a>.
+        </div>
+        <button id="cookie-accept" style="
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+  ">
+            Погоджуюсь
+        </button>
+    </div>
+    <!-- Cookie Notification Section (script)-->
+    <script>
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('cookie-accept');
+        const closeBtn = document.getElementById('cookie-close');
+
+        // Перевірка чи вже прийнято
+        if (localStorage.getItem('cookieAccepted') === 'true') {
+            cookieBanner.style.display = 'none';
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieAccepted', 'true');
+            cookieBanner.style.display = 'none';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            cookieBanner.style.display = 'none';
+        });
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('✅ Service Worker зареєстровано', reg.scope))
+                    .catch(err => console.error('❌ Service Worker помилка:', err));
+            });
+        }
+    </script>
+
+
+    <script src="main.js" defer></script>
+</body>
+
+</html>
