@@ -1,0 +1,31 @@
+<!-- pwa-loader.html -->
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>WebStart Studio App</title>
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(() => console.log("✅ Service Worker зареєстровано"))
+                .catch(err => console.error("❌ Помилка SW"));
+        }
+        // Автоматичний перехід до основної сторінки
+        setTimeout(() => {
+            window.location.href = "/index.html";
+        }, 1000);
+    </script>
+</head>
+
+<body style="display: flex; align-items: center; justify-content: center; height: 100vh; background-color: #000;">
+    <img src="icons/icon-192x192.png" alt="WebStart Studio" width="96" height="96" />
+</body>
+
+</html>
